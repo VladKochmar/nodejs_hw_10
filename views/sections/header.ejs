@@ -1,0 +1,27 @@
+<header class="header">
+  <nav class="header__nav">
+    <ul class="header__list">
+      <li class="header__item"><a href="/" class="header__link">Home</a></li>
+      <li class="header__item"><a href="/about" class="header__link">About Us</a></li>
+      <li class="header__item"><a href="/cars" class="header__link">Cars</a></li>
+      <% if(user && user.type.title==='admin' ) { %>
+        <li class="header__item"><a href="/cars/create" class="header__link">Add Car</a></li>
+        <% } %>
+          <% if(!user) { %>
+            <li class="header__item"><a href="/auth/login" class="header__link">Log In</a></li>
+            <li class="header__item"><a href="/users/register" class="header__link">Register</a></li>
+            <% } %>
+    </ul>
+  </nav>
+
+  <% if(user) { %>
+    <div class="user">
+      <div class="user-logo">
+        <%= user.username[0] %>
+      </div>
+      <form action="/auth/logout" method="get">
+        <button type="submit">Log out</button>
+      </form>
+    </div>
+    <% } %>
+</header>

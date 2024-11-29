@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/form.css">
+  <title>Log In</title>
+</head>
+
+<body>
+  <%- include('./sections/header.ejs') %>
+    <main>
+      <form action="/auth/login" method="post" class="form">
+        <div class="form__item">
+          <input type="email" placeholder="Email" name="email" class="form__input">
+        </div>
+        <div class="form__item">
+          <input type="password" placeholder="Password" name="password" class="form__input">
+        </div>
+        <button type="submit" class="form__button">Log In</button>
+      </form>
+    </main>
+</body>
+
+</html>
